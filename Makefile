@@ -12,7 +12,7 @@ ODIR = obj/
 LIBFT = src/utils/libft/
 UTILS = utils/
 
-FILES = ideas_sorter \
+FILES = priorities_sorter \
 		$(UTILS)idea \
 
 LIB = libft.a
@@ -24,7 +24,7 @@ OFILES = $(addprefix $(ODIR), $(addsuffix .o, $(FILES)))
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 
-NAME = ideas_sorter
+NAME = priorities_sorter
 
 .PHONY: all clean fclean re party leak
 
@@ -40,8 +40,8 @@ $(ODIR)%.o: $(SRCSDIR)%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(LIBPATH) $(OFILES)
-	@echo "$(YELLOW)$(BOLD)Executable: $@$(COLOUR_RESET)"
 	$(CC) $(CFLAGS) $(OFILES) $(LIBPATH) -o $(NAME)
+	@echo "$(YELLOW)$(BOLD)Executable: $@$(COLOUR_RESET)"
 	@echo "$(GREEN)$(BOLD)🎊 Compilation complete! 🎊$(COLOUR_RESET)"
 
 clean:
